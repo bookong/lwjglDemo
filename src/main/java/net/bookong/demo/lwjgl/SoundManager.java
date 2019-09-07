@@ -1,5 +1,6 @@
 package net.bookong.demo.lwjgl;
 
+import java.io.File;
 import java.nio.IntBuffer;
 
 import org.lwjgl.BufferUtils;
@@ -120,7 +121,7 @@ public class SoundManager {
         buffers[bufferIndex] = scratchBuffer.get(0);
 
         // load wave data from buffer
-        WaveData wavefile = WaveData.create("spaceinvaders/" + path);
+        WaveData wavefile = WaveData.create("spaceinvaders" + File.separator + path);
 
         // copy to buffers
         AL10.alBufferData(buffers[bufferIndex], wavefile.format, wavefile.data, wavefile.samplerate);
